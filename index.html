@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pasteleria La Roca — Custom Cakes & Mexican Bread | Dallas, TX</title>
+<meta name="description" content="Custom cakes for quinceañeras, birthdays & every occasion plus the best Mexican bread in Dallas. 4.7★ Google, 100% recommended on Facebook. Call (214) 238-2056.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+:root {
+  --magenta: #c2185b;
+  --magenta-deep: #9a1048;
+  --magenta-light: #e91e7a;
+  --gold: #d4a843;
+  --gold-light: #f0d080;
+  --terracotta: #c46a3f;
+  --warm-cream: #fdf6ee;
+  --cream: #faf3e8;
+  --charcoal: #1e1e1e;
+  --text: #2d2d2d;
+  --text-light: #6b6b6b;
+  --pink-pale: #fdf0f4;
+}
+
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--warm-cream);line-height:1.7;overflow-x:hidden}
+
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* ===== TOP BAR ===== */
+.top-bar{background:var(--charcoal);color:rgba(255,255,255,0.85);padding:10px 0;font-size:0.82rem}
+.top-bar .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top-bar a{color:var(--gold-light);text-decoration:none}
+.top-bar a:hover{color:#fff}
+
+/* ===== NAVBAR ===== */
+.navbar{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(194,24,91,0.08);transition:box-shadow 0.3s}
+.navbar.scrolled{box-shadow:0 2px 24px rgba(194,24,91,0.08)}
+.navbar .container{display:flex;justify-content:space-between;align-items:center;height:72px}
+.nav-logo{font-family:'Bebas Neue',cursive;font-size:1.8rem;color:var(--magenta-deep);text-decoration:none;letter-spacing:2px}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:28px;list-style:none;align-items:center}
+.nav-links a{text-decoration:none;color:var(--text);font-size:0.85rem;font-weight:600;letter-spacing:0.8px;text-transform:uppercase;position:relative;transition:color 0.3s}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--magenta);transition:width 0.3s}
+.nav-links a:hover{color:var(--magenta)}
+.nav-links a:hover::after{width:100%}
+.mobile-toggle{display:none;background:none;border:none;cursor:pointer}
+.mobile-toggle span{display:block;width:24px;height:2px;background:var(--charcoal);margin:6px 0;transition:0.3s}
+
+/* ===== BTN ===== */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:50px;font-size:0.9rem;font-weight:700;text-decoration:none;letter-spacing:0.5px;transition:all 0.3s;cursor:pointer;border:none;font-family:'DM Sans',sans-serif}
+.btn-primary{background:var(--magenta);color:#fff}
+.btn-primary:hover{background:var(--magenta-deep);transform:translateY(-2px);box-shadow:0 8px 25px rgba(194,24,91,0.25)}
+.btn-gold{background:var(--gold);color:var(--charcoal)}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.4)}
+.btn-outline:hover{border-color:#fff;background:rgba(255,255,255,0.1)}
+
+/* ===== HERO ===== */
+.hero{position:relative;min-height:92vh;display:flex;align-items:center;overflow:hidden;background:var(--charcoal)}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(154,16,72,0.88) 0%,rgba(30,30,30,0.75) 50%,rgba(30,30,30,0.6) 100%)}
+.hero::before{content:'';position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse at 30% 80%,rgba(212,168,67,0.12) 0%,transparent 60%)}
+.hero-content{position:relative;z-index:2;max-width:700px;padding:40px 0}
+.hero-badge{display:inline-block;padding:8px 20px;background:rgba(212,168,67,0.15);border:1px solid rgba(212,168,67,0.3);border-radius:30px;color:var(--gold-light);font-size:0.8rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:24px}
+.hero h1{font-family:'Bebas Neue',cursive;font-size:clamp(3.2rem,7vw,5.5rem);color:#fff;line-height:1.05;letter-spacing:3px;margin-bottom:20px}
+.hero h1 em{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;letter-spacing:-1px;color:var(--gold-light);display:block;font-size:0.55em;margin-top:8px}
+.hero-tagline{font-size:1.15rem;color:rgba(255,255,255,0.8);margin-bottom:36px;line-height:1.7;max-width:560px}
+.hero-buttons{display:flex;gap:16px;flex-wrap:wrap}
+
+/* ===== STATS ===== */
+.stats{background:var(--magenta-deep);padding:40px 0;position:relative;overflow:hidden}
+.stats::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 50%,rgba(212,168,67,0.1) 0%,transparent 50%)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center;position:relative;z-index:1}
+.stat-item h3{font-family:'Bebas Neue',cursive;font-size:2.8rem;color:#fff;letter-spacing:2px;line-height:1}
+.stat-item p{font-size:0.8rem;color:rgba(255,255,255,0.65);font-weight:500;text-transform:uppercase;letter-spacing:1.5px;margin-top:4px}
+
+/* ===== SECTIONS ===== */
+section{padding:100px 0}
+.section-label{font-size:0.78rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--magenta);margin-bottom:12px}
+.section-title{font-family:'Bebas Neue',cursive;font-size:clamp(2.2rem,4.5vw,3.5rem);color:var(--charcoal);line-height:1.1;letter-spacing:2px;margin-bottom:20px}
+.section-title span{color:var(--magenta)}
+
+/* ===== ABOUT ===== */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-image{border-radius:16px;overflow:hidden;aspect-ratio:4/5;position:relative}
+.about-image img{width:100%;height:100%;object-fit:cover}
+.about-image::after{content:'';position:absolute;bottom:0;right:0;width:80px;height:80px;background:var(--gold);opacity:0.3;border-radius:16px 0 0 0}
+.about-text p{font-size:1.02rem;color:var(--text-light);margin-bottom:18px;line-height:1.8}
+.about-text .quote{font-family:'Playfair Display',serif;font-style:italic;font-size:1.2rem;color:var(--magenta-deep);border-left:3px solid var(--gold);padding-left:20px;margin:28px 0}
+
+/* ===== SPECIALTIES ===== */
+.specialties{background:var(--cream)}
+.spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.spec-card{background:#fff;border-radius:16px;overflow:hidden;border:1px solid rgba(194,24,91,0.06);transition:all 0.3s}
+.spec-card:hover{transform:translateY(-5px);box-shadow:0 12px 40px rgba(194,24,91,0.1)}
+.spec-card-img{height:220px;overflow:hidden}
+.spec-card-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}
+.spec-card:hover .spec-card-img img{transform:scale(1.05)}
+.spec-card-body{padding:24px}
+.spec-card-body h3{font-family:'Bebas Neue',cursive;font-size:1.4rem;letter-spacing:1.5px;color:var(--charcoal);margin-bottom:8px}
+.spec-card-body p{font-size:0.9rem;color:var(--text-light);line-height:1.6}
+.spec-tag{display:inline-block;margin-top:12px;padding:4px 14px;background:var(--pink-pale);color:var(--magenta);font-size:0.75rem;font-weight:700;border-radius:20px;letter-spacing:0.5px}
+
+/* ===== MENU ===== */
+.menu-section{background:var(--warm-cream)}
+.menu-tabs{display:flex;gap:8px;margin-bottom:48px;flex-wrap:wrap}
+.menu-tab{padding:10px 24px;border:2px solid var(--magenta);border-radius:50px;background:transparent;color:var(--magenta);font-size:0.85rem;font-weight:700;cursor:pointer;transition:all 0.3s;font-family:'DM Sans',sans-serif;letter-spacing:0.5px}
+.menu-tab.active,.menu-tab:hover{background:var(--magenta);color:#fff}
+.menu-panel{display:none}
+.menu-panel.active{display:block}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.menu-card{background:#fff;border-radius:12px;padding:24px;border:1px solid rgba(194,24,91,0.06);transition:all 0.3s}
+.menu-card:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(194,24,91,0.08);border-color:rgba(212,168,67,0.3)}
+.menu-card h4{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--charcoal);margin-bottom:6px}
+.menu-card .desc{font-size:0.85rem;color:var(--text-light);line-height:1.5}
+
+/* ===== GALLERY ===== */
+.gallery{background:var(--cream)}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.gallery-item{border-radius:12px;overflow:hidden;aspect-ratio:1;position:relative;cursor:pointer}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}
+.gallery-item:hover img{transform:scale(1.05)}
+.gallery-item::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(154,16,72,0.4) 0%,transparent 50%);opacity:0;transition:opacity 0.3s}
+.gallery-item:hover::after{opacity:1}
+.gallery-item:first-child{grid-row:span 2;aspect-ratio:auto}
+
+/* ===== REVIEWS ===== */
+.reviews-section{background:var(--charcoal);color:#fff;position:relative;overflow:hidden}
+.reviews-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 80%,rgba(194,24,91,0.15) 0%,transparent 50%)}
+.reviews-section .section-label{color:var(--gold-light)}
+.reviews-section .section-title{color:#fff}
+.reviews-section .section-title span{color:var(--gold-light)}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative;z-index:1}
+.review-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:32px;backdrop-filter:blur(8px)}
+.review-stars{color:var(--gold);font-size:1.1rem;margin-bottom:16px;letter-spacing:2px}
+.review-text{font-size:0.92rem;color:rgba(255,255,255,0.8);line-height:1.7;margin-bottom:20px;font-style:italic}
+.review-author{font-weight:600;color:var(--gold-light);font-size:0.85rem}
+.review-source{color:rgba(255,255,255,0.4);font-size:0.78rem}
+
+/* ===== LOCATION ===== */
+.location-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.loc-detail{display:flex;gap:16px;margin-bottom:20px;align-items:flex-start}
+.loc-detail .icon{width:44px;height:44px;min-width:44px;background:var(--pink-pale);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.loc-detail .text strong{display:block;font-size:0.88rem;color:var(--charcoal);margin-bottom:2px}
+.loc-detail .text span,.loc-detail .text a{font-size:0.88rem;color:var(--text-light);text-decoration:none}
+.loc-detail .text a:hover{color:var(--magenta)}
+.hours-table{width:100%;border-collapse:collapse;margin-top:16px}
+.hours-table td{padding:10px 0;border-bottom:1px solid rgba(194,24,91,0.06);font-size:0.88rem}
+.hours-table td:first-child{font-weight:500;color:var(--charcoal)}
+.hours-table td:last-child{text-align:right;color:var(--text-light)}
+.hours-table tr.today td{color:var(--magenta);font-weight:700}
+.hours-table tr.closed td:last-child{color:var(--terracotta)}
+.location-map{border-radius:16px;overflow:hidden;min-height:400px;height:100%;background:var(--cream)}
+.location-map iframe{width:100%;height:100%;border:none}
+
+/* ===== CTA ===== */
+.cta{background:linear-gradient(135deg,var(--magenta-deep) 0%,var(--magenta) 100%);text-align:center;padding:80px 0;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(212,168,67,0.1) 0%,transparent 60%)}
+.cta .container{position:relative;z-index:1}
+.cta h2{font-family:'Bebas Neue',cursive;font-size:clamp(2rem,4.5vw,3.5rem);color:#fff;letter-spacing:3px;margin-bottom:16px}
+.cta h2 span{color:var(--gold-light)}
+.cta p{color:rgba(255,255,255,0.75);font-size:1.05rem;margin-bottom:32px}
+.cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+/* ===== FOOTER ===== */
+.footer{background:var(--charcoal);color:rgba(255,255,255,0.55);padding:60px 0 32px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-brand .f-logo{font-family:'Bebas Neue',cursive;font-size:1.5rem;color:#fff;letter-spacing:2px;margin-bottom:12px}
+.footer-brand .f-logo span{color:var(--gold)}
+.footer-brand p{font-size:0.85rem;line-height:1.7}
+.footer h4{color:#fff;font-size:0.82rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:16px}
+.footer ul{list-style:none}
+.footer ul li{margin-bottom:10px}
+.footer ul a{color:rgba(255,255,255,0.55);text-decoration:none;font-size:0.85rem;transition:color 0.3s}
+.footer ul a:hover{color:var(--gold-light)}
+.social-links{display:flex;gap:12px;margin-top:16px}
+.social-link{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.55);text-decoration:none;font-size:0.8rem;font-weight:700;transition:all 0.3s}
+.social-link:hover{background:var(--magenta);color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.06);padding-top:24px;display:flex;justify-content:space-between;align-items:center;font-size:0.8rem}
+.footer-bottom a{color:var(--gold);text-decoration:none}
+
+/* ===== ANIMATIONS ===== */
+.fade-in{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+.slide-left{opacity:0;transform:translateX(-30px);transition:opacity 0.7s ease,transform 0.7s ease}
+.slide-left.visible{opacity:1;transform:translateX(0)}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:968px){
+  .about-grid,.location-grid{grid-template-columns:1fr}
+  .about-image{max-height:400px}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .spec-grid{grid-template-columns:1fr}
+  .reviews-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .gallery-item:first-child{grid-row:span 1}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .mobile-toggle{display:block}
+  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:#fff;padding:24px;gap:16px;box-shadow:0 10px 30px rgba(0,0,0,0.1)}
+  .hero h1{font-size:3rem}
+  .stats-grid{grid-template-columns:repeat(2,1fr);gap:20px}
+  .gallery-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr}
+  section{padding:70px 0}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="container">
+    <span><a href="tel:2142382056">(214) 238-2056</a> &nbsp;|&nbsp; 3812 W Clarendon Dr, Dallas, TX 75211</span>
+    <span id="hoursToday" style="color:var(--gold-light);font-weight:500"></span>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <a href="#" class="nav-logo">PASTELERIA <span>LA ROCA</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#specialties">Specialties</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#location">Visit</a></li>
+      <li><a href="tel:2142382056" class="btn btn-primary" style="padding:10px 24px;font-size:0.8rem">Order Now</a></li>
+    </ul>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=1600&auto=format" alt="Artisan bakery display" loading="eager">
+  </div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">Dallas' Authentic Mexican Bakery</div>
+      <h1>PASTELERIA LA ROCA<em>Custom Cakes & the Best Mexican Bread</em></h1>
+      <p class="hero-tagline">From show-stopping quinceañera cakes to fresh-baked conchas and pan dulce every morning — handmade with love in the heart of Dallas since day one.</p>
+      <div class="hero-buttons">
+        <a href="tel:2142382056" class="btn btn-gold">Call to Order</a>
+        <a href="#menu" class="btn btn-outline">Explore Our Menu</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item fade-in"><h3>4.7★</h3><p>Google Rating</p></div>
+      <div class="stat-item fade-in"><h3>234+</h3><p>Google Reviews</p></div>
+      <div class="stat-item fade-in"><h3>100%</h3><p>Recommended</p></div>
+      <div class="stat-item fade-in"><h3>3.6K</h3><p>FB Followers</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image fade-in">
+        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&auto=format" alt="Fresh baked bread" loading="lazy">
+      </div>
+      <div class="about-text fade-in">
+        <p class="section-label">Our Story</p>
+        <h2 class="section-title">MADE WITH LOVE,<br><span>BAKED WITH TRADITION</span></h2>
+        <p>Pasteleria La Roca is a family-owned Mexican bakery in the heart of West Dallas, bringing authentic flavors and stunning custom cakes to the community. What started with a passion for baking has grown into one of Dallas' most recommended bakeries — with a 100% recommendation rate from 92 Facebook reviews.</p>
+        <div class="quote">"Custom cakes for any occasion and the best Mexican bread — that's our promise to every customer who walks through our doors."</div>
+        <p>From perfectly golden conchas and sweet semita de aniz to breathtaking quinceañera cakes and three-tier wedding creations — every item is handmade fresh. Our customers aren't just buying pastries, they're celebrating life's biggest moments with us.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIALTIES -->
+<section class="specialties" id="specialties">
+  <div class="container">
+    <div style="text-align:center;max-width:600px;margin:0 auto 60px">
+      <p class="section-label fade-in">What We're Known For</p>
+      <h2 class="section-title fade-in">OUR <span>SPECIALTIES</span></h2>
+    </div>
+    <div class="spec-grid">
+      <div class="spec-card fade-in">
+        <div class="spec-card-img">
+          <img src="https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec?w=800&auto=format" alt="Custom celebration cake" loading="lazy">
+        </div>
+        <div class="spec-card-body">
+          <h3>CUSTOM CAKES</h3>
+          <p>Show-stopping cakes for quinceañeras, birthdays, weddings, baby showers, and every celebration. Tell us your vision — we'll make it real.</p>
+          <span class="spec-tag">Made to Order</span>
+        </div>
+      </div>
+      <div class="spec-card fade-in">
+        <div class="spec-card-img">
+          <img src="https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=800&auto=format" alt="Fresh Mexican bread" loading="lazy">
+        </div>
+        <div class="spec-card-body">
+          <h3>PAN DULCE & MEXICAN BREAD</h3>
+          <p>Fresh conchas, cuernos, polvorones, semita de aniz, and all your favorites — baked fresh daily using traditional recipes.</p>
+          <span class="spec-tag">Baked Daily</span>
+        </div>
+      </div>
+      <div class="spec-card fade-in">
+        <div class="spec-card-img">
+          <img src="https://images.unsplash.com/photo-1599785209707-a456fc1337bb?w=800&auto=format" alt="Tres leches cake" loading="lazy">
+        </div>
+        <div class="spec-card-body">
+          <h3>TRES LECHES & PASTELES</h3>
+          <p>Our famous tres leches, flan, and traditional Mexican pastries — the perfect sweet finish for any gathering or fiesta.</p>
+          <span class="spec-tag">Fan Favorite</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="menu-section" id="menu">
+  <div class="container">
+    <p class="section-label fade-in">Our Menu</p>
+    <h2 class="section-title fade-in">FRESH FROM <span>OUR OVENS</span></h2>
+    <div class="menu-tabs fade-in">
+      <button class="menu-tab active" data-tab="cakes">Custom Cakes</button>
+      <button class="menu-tab" data-tab="bread">Pan Dulce & Bread</button>
+      <button class="menu-tab" data-tab="pastries">Pastries & Desserts</button>
+      <button class="menu-tab" data-tab="savory">Savory</button>
+    </div>
+
+    <div class="menu-panel active" id="panel-cakes">
+      <div class="menu-grid">
+        <div class="menu-card fade-in"><h4>Quinceañera Cakes</h4><p class="desc">Elaborate multi-tier custom designs for the most important celebration — your vision brought to life</p></div>
+        <div class="menu-card fade-in"><h4>Birthday Cakes</h4><p class="desc">Custom themed cakes for all ages — from character cakes for kids to elegant designs for adults</p></div>
+        <div class="menu-card fade-in"><h4>Wedding Cakes</h4><p class="desc">Stunning tiered wedding cakes with custom flowers, fondant work, and elegant detailing</p></div>
+        <div class="menu-card fade-in"><h4>Baby Shower Cakes</h4><p class="desc">Adorable custom designs for gender reveals, baby showers, and christenings</p></div>
+        <div class="menu-card fade-in"><h4>Graduation Cakes</h4><p class="desc">Celebrate achievements with custom school-themed and milestone cakes</p></div>
+        <div class="menu-card fade-in"><h4>Custom Cupcakes</h4><p class="desc">Beautifully decorated cupcake platters — coordinated with any theme or color scheme</p></div>
+      </div>
+    </div>
+
+    <div class="menu-panel" id="panel-bread">
+      <div class="menu-grid">
+        <div class="menu-card fade-in"><h4>Conchas</h4><p class="desc">Classic Mexican sweet bread with a crunchy sugar shell — available in vanilla, chocolate, and strawberry</p></div>
+        <div class="menu-card fade-in"><h4>Cuernos</h4><p class="desc">Buttery horn-shaped rolls — soft, flaky, and lightly sweet</p></div>
+        <div class="menu-card fade-in"><h4>Semita de Aniz</h4><p class="desc">Traditional anise-flavored sweet bread — aromatic and delicious with coffee</p></div>
+        <div class="menu-card fade-in"><h4>Polvorones</h4><p class="desc">Mexican shortbread cookies that melt in your mouth — a true classic</p></div>
+        <div class="menu-card fade-in"><h4>Orejas</h4><p class="desc">Crispy, flaky ear-shaped pastries dusted with cinnamon and sugar</p></div>
+        <div class="menu-card fade-in"><h4>Bolillos</h4><p class="desc">Crusty Mexican bread rolls — perfect for tortas or alongside any meal</p></div>
+        <div class="menu-card fade-in"><h4>Pan de Muerto</h4><p class="desc">Seasonal orange-scented bread for Día de los Muertos — a beloved tradition</p></div>
+        <div class="menu-card fade-in"><h4>Rosca de Reyes</h4><p class="desc">Traditional Three Kings Day bread — decorated with candied fruit, served every January</p></div>
+      </div>
+    </div>
+
+    <div class="menu-panel" id="panel-pastries">
+      <div class="menu-grid">
+        <div class="menu-card fade-in"><h4>Tres Leches Cake</h4><p class="desc">Our famous three-milk soaked sponge cake — incredibly moist and topped with whipped cream</p></div>
+        <div class="menu-card fade-in"><h4>Flan</h4><p class="desc">Silky smooth Mexican custard with caramel sauce — a timeless classic</p></div>
+        <div class="menu-card fade-in"><h4>Empanadas</h4><p class="desc">Flaky turnovers filled with pumpkin, sweet cream, or fruit — baked golden</p></div>
+        <div class="menu-card fade-in"><h4>Gelatina</h4><p class="desc">Colorful layered gelatin desserts — a staple at every Mexican celebration</p></div>
+        <div class="menu-card fade-in"><h4>Arroz con Leche</h4><p class="desc">Creamy Mexican rice pudding with cinnamon — warm, comforting, and traditional</p></div>
+      </div>
+    </div>
+
+    <div class="menu-panel" id="panel-savory">
+      <div class="menu-grid">
+        <div class="menu-card fade-in"><h4>Pizza</h4><p class="desc">Fresh-baked pizza made in-house — a neighborhood favorite alongside the sweets</p></div>
+        <div class="menu-card fade-in"><h4>Tamales</h4><p class="desc">Seasonal homemade tamales — authentic flavors wrapped in corn husks</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <p class="section-label fade-in">Gallery</p>
+    <h2 class="section-title fade-in">A TASTE OF <span>WHAT WE CREATE</span></h2>
+    <div class="gallery-grid">
+      <div class="gallery-item fade-in"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&auto=format" alt="Celebration cake" loading="lazy"></div>
+      <div class="gallery-item fade-in"><img src="https://images.unsplash.com/photo-1558326567-98ae2405596b?w=800&auto=format" alt="Pastries display" loading="lazy"></div>
+      <div class="gallery-item fade-in"><img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=800&auto=format" alt="Decorated cupcakes" loading="lazy"></div>
+      <div class="gallery-item fade-in"><img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=800&auto=format" alt="Fresh bread" loading="lazy"></div>
+      <div class="gallery-item fade-in"><img src="https://images.unsplash.com/photo-1587668178277-295251f900ce?w=800&auto=format" alt="Cookies and treats" loading="lazy"></div>
+      <div class="gallery-item fade-in"><img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=800&auto=format" alt="Bakery display case" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section" id="reviews">
+  <div class="container">
+    <div style="text-align:center;max-width:600px;margin:0 auto 60px">
+      <p class="section-label fade-in">Reviews</p>
+      <h2 class="section-title fade-in">WHY DALLAS <span>LOVES US</span></h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card fade-in">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"I ordered my daughter's quince cake. It was delicious and beautiful. I had so many compliments from my guests. They are the best!"</p>
+        <p class="review-author">— Facebook Review</p>
+        <p class="review-source">via Facebook</p>
+      </div>
+      <div class="review-card fade-in">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Excellent work and great customer service. The cakes were fresh and made to order. Service was polite and helpful."</p>
+        <p class="review-author">— Google Review</p>
+        <p class="review-source">via Google</p>
+      </div>
+      <div class="review-card fade-in">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Las reposterías más ricas. Definitivamente recomendados — the pastries are incredible and absolutely recommended!"</p>
+        <p class="review-author">— Gladys B.</p>
+        <p class="review-source">via Facebook</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="location" id="location">
+  <div class="container">
+    <div class="location-grid">
+      <div class="fade-in">
+        <p class="section-label">Visit Us</p>
+        <h2 class="section-title">FIND US IN <span>WEST DALLAS</span></h2>
+        <div class="loc-detail">
+          <div class="icon">📍</div>
+          <div class="text"><strong>Address</strong><span>3812 W Clarendon Dr, Dallas, TX 75211</span></div>
+        </div>
+        <div class="loc-detail">
+          <div class="icon">📞</div>
+          <div class="text"><strong>Phone</strong><a href="tel:2142382056">(214) 238-2056</a></div>
+        </div>
+        <div class="loc-detail">
+          <div class="icon">✉️</div>
+          <div class="text"><strong>Email</strong><a href="mailto:pastelerialaroca3812@gmail.com">pastelerialaroca3812@gmail.com</a></div>
+        </div>
+        <div class="loc-detail">
+          <div class="icon">📸</div>
+          <div class="text"><strong>Instagram</strong><a href="https://instagram.com/pasteleria_laroca" target="_blank">@pasteleria_laroca</a></div>
+        </div>
+        <h3 style="font-family:'Bebas Neue',cursive;font-size:1.3rem;letter-spacing:1.5px;margin-top:32px;color:var(--charcoal)">HOURS</h3>
+        <table class="hours-table" id="hoursTable">
+          <tr><td>Monday</td><td>8:00 AM – 7:00 PM</td></tr>
+          <tr><td>Tuesday</td><td>8:00 AM – 8:00 PM</td></tr>
+          <tr><td>Wednesday</td><td>8:00 AM – 7:00 PM</td></tr>
+          <tr><td>Thursday</td><td>8:00 AM – 7:00 PM</td></tr>
+          <tr><td>Friday</td><td>8:00 AM – 7:00 PM</td></tr>
+          <tr><td>Saturday</td><td>7:00 AM – 6:00 PM</td></tr>
+          <tr><td>Sunday</td><td>Closed</td></tr>
+        </table>
+      </div>
+      <div class="location-map fade-in">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3355!2d-96.87!3d32.73!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s3812+W+Clarendon+Dr%2C+Dallas%2C+TX+75211!5e0!3m2!1sen!2sus!4v1" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container">
+    <h2 class="fade-in">READY TO ORDER YOUR <span>DREAM CAKE?</span></h2>
+    <p class="fade-in">Call us today or visit our bakery in West Dallas — fresh bread daily, custom cakes for every occasion.</p>
+    <div class="cta-buttons fade-in">
+      <a href="tel:2142382056" class="btn btn-gold">Call (214) 238-2056</a>
+      <a href="https://instagram.com/pasteleria_laroca" target="_blank" class="btn btn-outline">Follow on Instagram</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="f-logo">PASTELERIA <span>LA ROCA</span></div>
+        <p>Custom cakes for every occasion and the best Mexican bread in Dallas. Family-owned, community-loved.</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/pastelerialaroca/" target="_blank" class="social-link" aria-label="Facebook">FB</a>
+          <a href="https://instagram.com/pasteleria_laroca" target="_blank" class="social-link" aria-label="Instagram">IG</a>
+          <a href="https://www.tiktok.com/@pasteleria.la.roc" target="_blank" class="social-link" aria-label="TikTok">TT</a>
+        </div>
+      </div>
+      <div>
+        <h4>Menu</h4>
+        <ul>
+          <li><a href="#menu">Custom Cakes</a></li>
+          <li><a href="#menu">Pan Dulce</a></li>
+          <li><a href="#menu">Pastries & Desserts</a></li>
+          <li><a href="#menu">Savory</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">Our Story</a></li>
+          <li><a href="#specialties">Specialties</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#location">Location</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:2142382056">(214) 238-2056</a></li>
+          <li><a href="mailto:pastelerialaroca3812@gmail.com">pastelerialaroca3812@gmail.com</a></li>
+          <li><a href="#">3812 W Clarendon Dr<br>Dallas, TX 75211</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Pasteleria La Roca. All rights reserved.</span>
+      <span>Website by <a href="https://reliabuilds.com" target="_blank">ReliaBuilds</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Today's hours
+(function(){
+  const hours={0:'Closed',1:'8:00 AM – 7:00 PM',2:'8:00 AM – 8:00 PM',3:'8:00 AM – 7:00 PM',4:'8:00 AM – 7:00 PM',5:'8:00 AM – 7:00 PM',6:'7:00 AM – 6:00 PM'};
+  const d=new Date().getDay();
+  const el=document.getElementById('hoursToday');
+  if(el) el.textContent=hours[d]==='Closed'?'Closed Today':'Open Today: '+hours[d];
+  const rows=document.querySelectorAll('#hoursTable tr');
+  const dayMap=[1,2,3,4,5,6,0];
+  rows.forEach((row,i)=>{if(dayMap[i]===d)row.classList.add('today');if(i===6)row.classList.add('closed')});
+})();
+
+// Sticky nav
+window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>20)});
+
+// Mobile menu
+document.getElementById('mobileToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open')});
+document.querySelectorAll('.nav-links a').forEach(a=>{a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open'))});
+
+// Menu tabs
+document.querySelectorAll('.menu-tab').forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    document.querySelectorAll('.menu-tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.menu-panel').forEach(p=>p.classList.remove('active'));
+    tab.classList.add('active');
+    const panel=document.getElementById('panel-'+tab.dataset.tab);
+    panel.classList.add('active');
+    panel.querySelectorAll('.fade-in').forEach(el=>{el.classList.remove('visible');setTimeout(()=>el.classList.add('visible'),50)});
+  });
+});
+
+// Intersection Observer
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach((entry,i)=>{
+    if(entry.isIntersecting){setTimeout(()=>entry.target.classList.add('visible'),i*80);obs.unobserve(entry.target)}
+  });
+},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade-in,.slide-left').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
